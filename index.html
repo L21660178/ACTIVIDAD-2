@@ -1,0 +1,58 @@
+<!-- INTRODUCIR COMO INTERACTUAR CON EL DOM PARA MODIFICAR ESTILOS USANDO JAVASCRIPT
+ CREAR UN BOTON QUE CAMBIE EL COLOR DE FONDO DE LA PAGINA AL HACER CLIC. ESTO DEBERA ESTAR RANDOMIZADO CADA QUE SE DE CLIC MEDIANTE
+ UN ARREGLO Y UN CICLO FOR
+ 25 DE SEPTIEMBRE DEL 2024 -->
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Color de Fondo</title>
+    <style>
+        /* Estilos para centrar el botón en la pantalla */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Estilos para hacer el botón más grande */
+        #colorButton {
+            padding: 20px 40px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón más grande para cambiar el color -->
+    <button id="colorButton">Cambiar Color</button>
+
+    <!-- Vínculo al código JavaScript -->
+    <script>
+        // Seleccionar el botón
+        const boton = document.getElementById("colorButton");
+
+        // Función que cambia el color de fondo aleatoriamente
+        boton.onclick = function() {
+            let colorHex = "#";  // El color empezará con el símbolo #
+
+            // Ciclo for para generar 6 caracteres hexadecimales
+            const caracteresHex = "0123456789ABCDEF";
+            for (let i = 0; i < 6; i++) {
+                // Generar un índice aleatorio para seleccionar un carácter hexadecimal
+                let indiceAleatorio = Math.floor(Math.random() * 16);
+                colorHex += caracteresHex[indiceAleatorio];
+            }
+
+            // Cambiar el color de fondo de la página con el color hexadecimal generado
+            document.body.style.backgroundColor = colorHex;
+        };
+    </script>
+</body>
+</html>
+
+ 
